@@ -1,4 +1,7 @@
 use std::{any::Any, collections::HashMap, fmt::format, hash::Hash};
+mod  lifetime;
+
+
 
 fn main() {
      let mut s = Vec::new();
@@ -191,7 +194,7 @@ fn main() {
 
     // generic bound traits  
     // means the struct that your passing should have generic trait that bound for that fuction should be impl to struct 
-    let anyuser = Userany {
+    let anyuser = Userany {a
         addresss:String::from("yashkelhe"),
         Ipaddress: String::from("123.123.122.0")
     };
