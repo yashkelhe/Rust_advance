@@ -1,10 +1,19 @@
-use std::{any::Any, collections::HashMap, fmt::format, hash::Hash};
+use std::{ collections::HashMap};
 mod  lifetime;
+mod thread;
+mod createmultithreadcalculator;
 
 
 
 fn main() {
-     let mut s = Vec::new();
+
+     lifetime::lifetime();
+     lifetime::lifetimewithstruct();
+     thread::implthread();
+     thread::talk_to_multiple_thread();
+     createmultithreadcalculator::multithreadcalculator();
+
+    let mut s = Vec::new();
      s.push(1);
      s.push(2);   
      s.push(5);   
@@ -166,7 +175,7 @@ fn main() {
     // of that window but it does not have the owner ship 
     let stringing = String::from("yash kelhe");
     let slice = slicing(&stringing);
-
+        print!("{}",slice);
 
 
     // what is the string literal 
@@ -194,8 +203,8 @@ fn main() {
 
     // generic bound traits  
     // means the struct that your passing should have generic trait that bound for that fuction should be impl to struct 
-    let anyuser = Userany {a
-        addresss:String::from("yashkelhe"),
+    let anyuser = Userany {
+        addresss: String::from("yashkelhe"),
         Ipaddress: String::from("123.123.122.0")
     };
 
@@ -343,13 +352,10 @@ fn returnevenvalue(s : &Vec<i32>) -> Vec<i32> {
 
         // or 
     }
-
     // for i in s.iter().copied() {
     //     if i % 2 == 0 {
     //         even_values.push(i);
     //     }
     // }
-
-
     even_values 
 }
