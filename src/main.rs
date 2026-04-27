@@ -210,6 +210,18 @@ fn main() {
 
 
     notifyany(anyuser);
+
+
+    // understand this very important 
+    fn apply<F>(f: F)
+        where
+            F: Fn(i32) -> i32,
+        {
+            println!("{}", f(5));
+        }
+
+    apply(|x| x + 1);
+
 }
 
 
