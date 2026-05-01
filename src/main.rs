@@ -1,6 +1,7 @@
 use std::{ collections::HashMap};
 mod  lifetime;
 mod thread;
+mod readfile;
 mod createmultithreadcalculator;
 
 
@@ -12,7 +13,9 @@ fn main() {
      thread::implthread();
      thread::talk_to_multiple_thread();
      createmultithreadcalculator::multithreadcalculator();
+     readfile::readthefile();
 
+     
     let mut s = Vec::new();
      s.push(1);
      s.push(2);   
@@ -222,8 +225,35 @@ fn main() {
 
     apply(|x| x + 1);
 
+        
+
+    let user11  = Newusers {
+        name: String::from("yash"),
+        age: 23
+    };
+
+    print!("the name of the user is {}", user11.new());
+    print!("the static function is here {}", Newusers::new1());
+    
 }
 
+
+struct Newusers {
+    name:String,
+    age:usize
+}
+
+impl Newusers{
+    // dynamic 
+    fn new(&self)-> String{
+        return self.name.clone();
+    }
+
+    // static 
+    fn new1()-> String{
+        return String::from("this is static function");
+    }
+}
 
 struct Userany {
     addresss : String,
