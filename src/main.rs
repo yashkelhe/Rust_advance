@@ -3,7 +3,7 @@ mod  lifetime;
 mod thread;
 mod readfile;
 mod createmultithreadcalculator;
-
+mod traits;
 
 
 fn main() {
@@ -14,7 +14,7 @@ fn main() {
      thread::talk_to_multiple_thread();
      createmultithreadcalculator::multithreadcalculator();
      readfile::readthefile();
-
+     traits::maintrait();
      
     let mut s = Vec::new();
      s.push(1);
